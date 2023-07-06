@@ -52,7 +52,7 @@ class Welcome extends CI_Controller
 
         $post = new Post();
         $post->user_id = $user_id ;
-        $post->article = $article;
+        $post->article = $artikel;
         $post->jenis = $jenis;
         $post->save();
 
@@ -72,6 +72,7 @@ class Welcome extends CI_Controller
         
         $avail_user = User::all();
         $post = Post::find($id);
+
         $jenis = 0;
         if($post->jenis == 'Berita') $jenis = 0;
         else if($post->jenis == 'Tutorial') $jenis = 1;
@@ -84,7 +85,7 @@ class Welcome extends CI_Controller
     {
         $post = Post::find($id);
         $post->user_id = $this->input->post('username');
-        $post->article = $this->input->post('article');
+        $post->article = $this->input->post('artikel');
         $post->jenis = $this->input->post('jenis');
         $post->save();
 
